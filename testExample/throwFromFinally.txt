@@ -49,6 +49,7 @@ public class testChartUtilsMethodUseAspetctJ {
 		    JOptionPane.showMessageDialog(null, lbl, "ImageDialog", 
 		                                 JOptionPane.PLAIN_MESSAGE, null);
 		} catch (CustomRobustaException e) {
+			JOptionPane.showMessageDialog(null, e.getMessage());
 			e.printStackTrace();
 			Assert.assertEquals("This Exception is thrown from try/catch block, so the bad smell is removed.",e.getMessage());
 		} catch (Exception e) {
