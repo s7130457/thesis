@@ -39,12 +39,9 @@ public class testSunJPEGEncoderAdapterMethodUseAspetctJ {
 			JLabel lbl = new JLabel(new ImageIcon("Pie.jpeg"));
 
 			JOptionPane.showMessageDialog(null, lbl, "ImageDialog", JOptionPane.PLAIN_MESSAGE, null);
-			Assert.fail("Resources not being released.");
-		}catch (RuntimeException e) {
-			JOptionPane.showMessageDialog(null, e.getMessage());
-			Assert.assertEquals("This exception is thrown from CarelessCleanup's unit test by using AspectJ.",e.getMessage());
+			Assert.assertTrue(aspectJSwitch.isResourceCleanup());
 		}catch (Exception e) {
-			Assert.fail("Resources not being released.");
+			Assert.assertTrue(aspectJSwitch.isResourceCleanup());
 		}
 	}
 }
